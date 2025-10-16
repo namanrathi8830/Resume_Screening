@@ -5,3 +5,6 @@ sentence-transformers
 numpy
 pydantic
 scikit-learn
+transformers
+faiss-cpu
+gunicorn

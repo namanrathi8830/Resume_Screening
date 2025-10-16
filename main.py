@@ -6,6 +6,7 @@ app = FastAPI(title="Resume Matcher AI", version="1.0")
 
 MODEL_PATH = "model"
 model = SentenceTransformer(MODEL_PATH)
+print("✅ Model loaded successfully.")
 
 class ResumeJobInput(BaseModel):
     resume: str
@@ -13,7 +14,7 @@ class ResumeJobInput(BaseModel):
 
 @app.get("/")
 def home():
-    return {"message": "🚀 Resume Matcher API is live!"}
+    return {"message": "Resume AI API is running!"}
 
 @app.post("/match")
 def match_resume(input_data: ResumeJobInput):
