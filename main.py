@@ -16,6 +16,11 @@ class ResumeJobInput(BaseModel):
 def home():
     return {"message": "Resume AI API is running!"}
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+
 @app.post("/match")
 def match_resume(input_data: ResumeJobInput):
     try:
