@@ -1,10 +1,8 @@
 fastapi
-uvicorn
+uvicorn[standard]
 torch
 sentence-transformers
 numpy
 pydantic
 scikit-learn
 transformers
-faiss-cpu
-gunicorn
