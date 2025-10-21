@@ -14,8 +14,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-MODEL_PATH = "model"
-model = SentenceTransformer(MODEL_PATH)
+# Load model from Hugging Face Hub instead of local files
+MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"  # Lightweight model for Vercel
+model = SentenceTransformer(MODEL_NAME)
 print("✅ Model loaded successfully.")
 
 
