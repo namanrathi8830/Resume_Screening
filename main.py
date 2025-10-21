@@ -1,8 +1,18 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer, util
 
 app = FastAPI(title="Resume Matcher AI", version="1.0")
+
+# Add CORS middleware for web integration
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Configure this for production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 MODEL_PATH = "model"
 model = SentenceTransformer(MODEL_PATH)
